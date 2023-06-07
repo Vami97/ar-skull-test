@@ -32,6 +32,10 @@
         
       } 
       
+      .btn:disabled{
+        background-color: #a86363; 
+      }
+      
       .btn img{
         width:100%;
       }
@@ -51,6 +55,7 @@
         z-index: 2;
         
         border-radius: 25px;
+        border: 2px solid white;
         color: white;
         background-color: #1a1a1a;
         text-align: center;
@@ -61,15 +66,19 @@
     <body style="margin: 0; overflow: hidden;">
 			<div class="buttons" style="float:left;">
 				<button class="btn" onclick="textshow()"><img src="img/info.png"></button>
-        <button class="btn"><img src="img/sound.png"></button>
-        <button class="btn"><img src="img/texture.png"></button>
-        <button class="btn"><img src="img/run.png"></button>
+        <button class="btn" onclick="playsong()"><img id="songimg" src="img/sound.png"></button>
+        <button class="btn" disabled><img src="img/texture.png"></button>
+        <button class="btn" onclick="animateshades()"><img src="img/run.png"></button>
 			</div>
       
       <div id="info" class="info">
         <h1>Sick Shades!</h1>
         <button class="btn" onclick="texthide()"><img src="img/close.png"></button>
 		  </div>
+      
+      <audio id="song">
+        <source src="sound/song.mp3" type="audio/mpeg">
+      </audio>
 	
         <a-scene embedded arjs>
           <a-assets>
@@ -103,15 +112,55 @@
 		
       <script>
       $( document ).ready(function() {
-          texthide();
+        texthide();
       });
+      
+      var songplaying = false;
+      var animationplaying = false;
+        
         
       function textshow(){
-          document.getElementById("info").style.display = "block";
+        document.getElementById("info").style.display = "block";
       }
         
       function texthide(){
-          document.getElementById("info").style.display = "none";
+        document.getElementById("info").style.display = "none";
+      }
+        
+      function playsong(){
+        song = document.getElementById("song");
+        songimg = document.getElementById("songimg");
+        
+        
+        if(songplaying)
+          { 
+            song.load();        
+            songplaying = false;
+            songimg.src = "img/sound.png"; 
+          }
+        else
+          {  
+            song.load();
+            song.play();
+            songplaying = true;
+            songimg.src = "img/close.png"; 
+          }             
+      }
+        
+      function animateshades()
+      {
+          shades = document.getElementById("model");
+          shades.removeAttribute('animation-mixer');
+          if(animationplaying)
+          {
+              shades.setAttribute('animation-mixer','clip: Static Pose');
+              animationplaying = false;
+          }
+          else
+          {
+              shades.setAttribute('animation-mixer','loop: repeat');
+              animationplaying = true;
+          }
       }
       </script>
     </body>
