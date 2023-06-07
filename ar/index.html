@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
 		<title>Sick Shades</title>
+		<link rel="shortcut icon" type="image/png" href="img/Glasses.png"/>
 	
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -29,7 +30,6 @@
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-
             >
                 <a-entity
                     id="model"
@@ -45,12 +45,10 @@
         </a-scene>
 		
 		<div class="container">
-			<div id="Featured" class="invisiblecontentbox" style="">
-				<div class="btnalt" style="flex-wrap: wrap; padding: 20px;">
-				  <a href="" target="_blank"><div><img src="img/Glasses.png" style="height:65px;"></div></a>
-				  <a href="" target="_blank"><div><img src="img/Glasses.png" style="height:65px;"></div></a>
-				  <a href="" target="_blank"><div><img src="img/Glasses.png" style="height:65px;"></div></a>
-				</div>
+			<div class="buttons">
+			  <button><div><img src="img/Glasses.png" style="height:65px;"></div></button>
+			  <button><div><img src="img/Glasses.png" style="height:65px;"></div></button>
+			  <button><div><img src="img/Glasses.png" style="height:65px;"></div></button>
 		    </div>
 		</div>
     </body>
