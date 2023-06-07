@@ -30,22 +30,19 @@
             </a-assets>
 
             <a-marker
-                id="animated-marker"
+                id="marker"
                 type="pattern"
                 preset="custom"
                 url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
 
             >
                 <a-entity
-                    id="bowser-model"
+                    id="model"
                     scale="0.05 0.05 0.05"
                     animation-mixer="clip: Static Pose"
                     gltf-model="#animated-asset"
                     class="clickable"
-                    gesture-handler
+                    visible="true"
                 ></a-entity>
             </a-marker>
 
