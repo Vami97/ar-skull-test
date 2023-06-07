@@ -60,23 +60,32 @@
         background-color: #1a1a1a;
         text-align: center;
       }
+	  
+	  /*MOBILE*/
+	@media screen and (max-width: 900px) {
+		.info{
+			width: 100%;
+			margin-top: 110px;
+		}
+	}
     </style>  
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-			<div class="buttons" style="float:left;">
-				<button class="btn" onclick="textshow()"><img src="img/info.png"></button>
-        <button class="btn" onclick="playsong()"><img id="songimg" src="img/sound.png"></button>
-        <button class="btn" disabled><img src="img/texture.png"></button>
-        <button class="btn" onclick="animateshades()"><img src="img/run.png"></button>
-			</div>
+		<div class="buttons" style="float:left;">
+			<button class="btn" onclick="textshow()"><img src="img/info.png"></button>
+			<button class="btn" onclick="playsong()"><img id="songimg" src="img/sound.png"></button>
+			<button class="btn" disabled><img src="img/texture.png"></button>
+			<button class="btn" onclick="animateshades()"><img src="img/run.png"></button>
+		</div>
       
       <div id="info" class="info">
         <h1>Sick Shades!</h1>
 		<p>Use this Marker</p>
-		<img src="img/ARMarkerCenter.png">
+		<img src="img/pattern-Glasses.png">
+		<hr>
         <button class="btn" onclick="texthide()"><img src="img/close.png"></button>
-		  </div>
+	  </div>
       
       <audio id="song">
         <source src="sound/song.mp3" type="audio/mpeg">
