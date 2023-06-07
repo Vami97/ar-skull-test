@@ -17,7 +17,7 @@
 	color: #ccc;
   }
   
- .buttons {
+ .buttons button {
 	position: absolute;
 	width: 100%;
 	top: 0px;
