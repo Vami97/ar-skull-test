@@ -27,7 +27,7 @@
   color:var(--contentlight);  
   border-radius: 30px;
   
-  max-width: 500px;
+  width: 500px;
 }
 
 .btnalt {
