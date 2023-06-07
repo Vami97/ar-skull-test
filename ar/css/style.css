@@ -26,6 +26,8 @@
   border:2px solid var(--contentlight);
   color:var(--contentlight);  
   border-radius: 30px;
+  
+  max-width: 500px;
 }
 
 .btnalt {
