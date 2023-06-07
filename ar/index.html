@@ -14,42 +14,43 @@
     </head>
 
     <body style="margin: 0;">
-	  <div class="container">
-	
-        <a-scene embedded arjs>
-            <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="assets/asset.gltf"
-                ></a-asset-item>
-            </a-assets>
+	    <div class="container">
+			<a-scene embedded arjs>
+				<a-assets>
+					<a-asset-item
+						id="animated-asset"
+						src="assets/asset.gltf"
+					></a-asset-item>
+				</a-assets>
 
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
-                <a-entity
-                    id="model"
-                    scale="0.05 0.05 0.05"
-                    animation-mixer="clip: Static Pose"
-                    gltf-model="#animated-asset"
-                    class="clickable"
-                    visible="true"
-                ></a-entity>
-            </a-marker>
+				<a-marker
+					id="animated-marker"
+					type="pattern"
+					preset="custom"
+					url="assets/marker.patt"
+					raycaster="objects: .clickable"
+					emitevents="true"
+					cursor="fuse: false; rayOrigin: mouse;"
+				>
+					<a-entity
+						id="model"
+						scale="0.05 0.05 0.05"
+						animation-mixer="clip: Static Pose"
+						gltf-model="#animated-asset"
+						class="clickable"
+						visible="true"
+					></a-entity>
+				</a-marker>
 
-            <a-entity camera></a-entity>
-        </a-scene>
+				<a-entity camera></a-entity>
+			</a-scene>
+			
+			<div class="container">
+				<button><div><img src="img/Glasses.png" style="height:65px;"></div></button>
+				<button><div><img src="img/Glasses.png" style="height:65px;"></div></button>
+				<button><div><img src="img/Glasses.png" style="height:65px;"></div></button>
+			</div>
 		
-		
-		<button><div><img src="img/Glasses.png" style="height:65px;"></div></button>
-		<button><div><img src="img/Glasses.png" style="height:65px;"></div></button>
-		<button><div><img src="img/Glasses.png" style="height:65px;"></div></button>
-	  </div>
+	    </div>
     </body>
 </html>
