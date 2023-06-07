@@ -9,6 +9,15 @@
 }
 /*GLOBAL VARIABLES*/
 
+.container
+  {
+      position: absolute;
+      width: 100%;
+      top: 0px;
+      left: 0px;
+      color: #fff;
+  }
+
 .invisiblecontentbox {
   z-index: 1;
   margin: 5px;  
@@ -20,6 +29,7 @@
 }
 
 .btnalt {
+  z-index: 2;
   display:flex; 
   color: var(--contentlight);
 }
