@@ -1,0 +1,48 @@
+@charset "utf-8";
+/*CSS*/
+
+/*GLOBAL VARIABLES*/
+:root {
+  --contentlight: #e8f0ff; /* halloween: ff7221*/
+  --contentmid: #969dff; 
+  --contentdark: #000111;
+}
+/*GLOBAL VARIABLES*/
+
+.invisiblecontentbox {
+  margin: 5px;  
+  padding: 5px;
+  
+  border:2px solid var(--contentlight);
+  color:var(--contentlight);  
+  border-radius: 30px;
+}
+
+.btnalt {
+  display:flex; 
+  color: var(--contentlight);
+}
+
+.btnalt div{
+  padding:10px;
+  margin: 5px;
+  text-align:center;
+  
+  background-color:var(--contentdark);
+  color: var(--contentlight);
+  border-radius: 20px;
+  border: 2px solid var(--contentlight);
+}
+
+.btnalt div:hover {
+  transform: scale(1.05);
+}
+
+.btnalt a {
+  color: var(--contentlight);
+}
+
+.btnalt a:hover {
+  color: var(--contentlight);
+  text-decoration: none;
+}
