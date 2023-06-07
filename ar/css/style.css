@@ -1,27 +1,12 @@
 @charset "utf-8";
 /*CSS*/
-
-/*GLOBAL VARIABLES*/
-:root {
-  --contentlight: #e8f0ff; /* halloween: ff7221*/
-  --contentmid: #969dff; 
-  --contentdark: #000111;
-}
-/*GLOBAL VARIABLES*/
-
-.container {
-	position: absolute;
-	width: 100%;
-	top: 0px;
-	left: 0px;
-	color: #ccc;
-  }
+  
   
  .buttons button {
 	position: absolute;
 	width: 100%;
-	top: 0px;
-	left: 0px;
+	top: 10px;
+	left: 10px;
 	
 	z-index: 1;
  }
