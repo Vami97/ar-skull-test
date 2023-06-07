@@ -9,11 +9,19 @@
 }
 /*GLOBAL VARIABLES*/
 
-.container
-  {
+.container {
 	position: absolute;
 	width: 100%;
 	top: 0px;
 	left: 0px;
-	color: #fff;
+	color: #ccc;
   }
+  
+ .buttons {
+	position: absolute;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	
+	z-index: 1;
+ }
