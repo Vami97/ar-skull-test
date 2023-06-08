@@ -84,7 +84,7 @@
 		<div class="buttons" style="float:left;">
 			<button class="btn" onclick="textshow()"><img src="img/info.png"></button>
 			<button class="btn" onclick="playsong()"><img id="songimg" src="img/sound.png"></button>
-			<button class="btn" disabled><img src="img/texture.png"></button>
+			<button class="btn" onclick="changetexture()"><img src="img/texture.png"></button>
 			<button class="btn" onclick="animateshades()"><img src="img/run.png"></button>
 		</div>
       
@@ -105,6 +105,10 @@
             <a-asset-item
               id="animated-asset"
               src="assets/asset.gltf"
+            ></a-asset-item>	
+			<a-asset-item
+              id="animated-asset2"
+              src="assets/asset2.gltf"
             ></a-asset-item>
           </a-assets>
 
@@ -137,7 +141,7 @@
       
       var songplaying = false;
       var animationplaying = false;
-        
+      var texturechanged = false;
         
       function textshow(){
         document.getElementById("info").style.display = "block";
@@ -182,6 +186,22 @@
               animationplaying = true;
           }
       }
+	  
+	function changetexture()
+	{
+		shades = document.getElementById("model");
+		shades.removeAttribute('gltf-model');
+		if(texturechanged)
+		{
+			shades.setAttribute('gltf-model','animated-asset');
+			texturechanged = false;
+		}
+		else
+		{
+			shades.setAttribute('gltf-model','animated-asset2');
+			texturechanged = true;
+		}
+	} 
       </script>
     </body>
 </html>
