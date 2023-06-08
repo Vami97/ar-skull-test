@@ -129,6 +129,14 @@
               class="clickable"
               visible="true"
             ></a-entity>
+			<a-entity
+              id="model2"
+              scale="0.05 0.05 0.05"
+              animation-mixer="clip: Static Pose"
+              gltf-model="#animated-asset"
+              class="clickable"
+              visible="false"
+            ></a-entity>
           </a-marker>
 
           <a-entity camera style="z-index: 0;"></a-entity>
@@ -174,15 +182,20 @@
       function animateshades()
       {
           shades = document.getElementById("model");
+		  shades2 = document.getElementById("model2");
+		  
           shades.removeAttribute('animation-mixer');
+		  shades2.removeAttribute('animation-mixer');
           if(animationplaying)
           {
               shades.setAttribute('animation-mixer','clip: Static Pose');
+			  shades2.setAttribute('animation-mixer','clip: Static Pose');
               animationplaying = false;
           }
           else
           {
               shades.setAttribute('animation-mixer','loop: repeat');
+			  shades2.setAttribute('animation-mixer','loop: repeat');
               animationplaying = true;
           }
       }
@@ -190,15 +203,20 @@
 	function changetexture()
 	{
 		shades = document.getElementById("model");
-		shades.removeAttribute('gltf-model');
+		shades2 = document.getElementById("model2");
+		
+		shades.removeAttribute('visible');
+		shades2.removeAttribute('visible');
 		if(texturechanged)
 		{
-			shades.setAttribute('gltf-model','animated-asset');
+			shades.setAttribute('visible','true');
+			shades2.setAttribute('visible','false');
 			texturechanged = false;
 		}
 		else
 		{
-			shades.setAttribute('gltf-model','animated-asset2');
+			shades.setAttribute('visible','false');
+			shades2.setAttribute('visible','true');
 			texturechanged = true;
 		}
 	} 
