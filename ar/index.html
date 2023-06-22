@@ -119,6 +119,13 @@
               gltf-model="assets/asset.gltf"
               visible="true"
             ></a-entity>
+			<a-entity
+              id="model2"
+              scale="0.05 0.05 0.05"
+              animation-mixer="clip: Static Pose"
+              gltf-model="assets/asset2.gltf"
+              visible="false"
+            ></a-entity>
           </a-marker>
 
           <a-entity camera style="z-index: 0;"></a-entity>
@@ -184,18 +191,21 @@
 	  
 	function changetexture()
 	{
-		shades = 'assets/asset.gltf';
-		shades2 = 'assets/asset2.gltf';
+		shades = document.getElementById("model");
+		shades2 = document.getElementById("model2");
 		
-		asset = document.querySelector("#model");
+		shades.removeAttribute('visible');
+		shades2.removeAttribute('visible');
 		if(texturechanged)
 		{
-			asset.setAttribute('gltf-model',shades2);
+			shades.setAttribute('visible','false');
+			shades2.setAttribute('visible','true');
 			texturechanged = false;
 		}
 		else
 		{
-			asset.setAttribute('gltf-model',shades);
+			shades.setAttribute('visible','true');
+			shades2.setAttribute('visible','false');
 			texturechanged = true;
 		}
 	} 
